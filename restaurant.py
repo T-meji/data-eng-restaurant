@@ -22,7 +22,11 @@ class Table:
                 return False
 
     def get_subtotal(self):
-        pass
+        subtotal = 0
+        for item_order in self.bill:
+            subtotal += item_order["price"] * item_order["quantity"]
+        return subtotal
+
     def get_total(self):
         pass
     def split_bill(self):
