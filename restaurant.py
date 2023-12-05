@@ -4,15 +4,14 @@ class Table:
         self.bill = []
         self.num_of_people = num_of_people
 
-    def order(self,item,price,quantity=1):
-        for objects in self.bill:
-            if objects["item"] == item and objects["price"] == price:
-                objects["quantity"] += quantity
+    def order(self, item, price, quantity=1):
+        for item_order in self.bill:
+            if item_order["item"] == item and item_order["price"] == price:
+                item_order["quantity"] += quantity
         else:
             self.bill.append({"item": item, "price": price, "quantity": quantity})
 
-    def remove(self):
-        def remove(self, item, price, quantity=1):
+    def remove(self, item, price, quantity=1):
         for item_order in self.bill:
             if item and price in item_order:
                 item_order["quantity"] -= quantity
