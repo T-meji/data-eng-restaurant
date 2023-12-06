@@ -25,7 +25,7 @@ class Table:
         subtotal = 0
         for item_order in self.bill:
             subtotal += item_order["price"] * item_order["quantity"]
-        return subtotal
+        return round(float(subtotal), 2)
 
     def get_total(self):
         pass
