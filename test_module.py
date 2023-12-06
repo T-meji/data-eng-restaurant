@@ -96,6 +96,8 @@ class UnitTests(unittest.TestCase):
             "Expected `split_bill` to return 12.20 to 2 decimal places."
         )
 
+    def test_subtotla(self):
+        self.table02
 
 if __name__ == "__main__":
     unittest.main()
