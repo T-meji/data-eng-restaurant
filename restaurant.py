@@ -27,8 +27,31 @@ class Table:
             subtotal += item_order["price"] * item_order["quantity"]
         return round(float(subtotal), 2)
 
-    def get_total(self):
-        pass
+    def get_total(self, gratuity=0.1):
+        # Calculate Sub Total
+        subtotal = self.get_subtotal()
+
+        # Calculate Service Charge
+        service_charge = subtotal * gratuity
+
+        # Calculate Total
+        total = subtotal + gratuity
+
+        # Format the results as strings in British pounds and pence
+        formatted_subtotal = "£{:.2f}".format(subtotal)
+        formatted_service_charge = "£{:.2f}".format(gratuity)
+        formatted_total = "£{:.2f}".format(total)
+
+        # Return the result as a dictionary
+        result = {
+            "Sub Total": formatted_subtotal,
+            "Service Charge": formatted_service_charge,
+            "Total": formatted_total
+        }
+
+        return result
+
+
     def split_bill(self):
         pass
 
