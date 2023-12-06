@@ -35,11 +35,11 @@ class Table:
         service_charge = subtotal * gratuity
 
         # Calculate Total
-        total = subtotal + gratuity
+        total = subtotal + service_charge
 
         # Format the results as strings in British pounds and pence
         formatted_subtotal = "£{:.2f}".format(subtotal)
-        formatted_service_charge = "£{:.2f}".format(gratuity)
+        formatted_service_charge = "£{:.2f}".format(service_charge)
         formatted_total = "£{:.2f}".format(total)
 
         # Return the result as a dictionary
